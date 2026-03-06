@@ -1,0 +1,366 @@
+@charset "UTF-8";
+
+/* =========================
+RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'komika axis', sans-serif;
+}
+/* =========================
+BODY / LAYOUT BASE
+========================= */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* =========================
+THEMES
+========================= */
+body.dark {
+    background-color: #000;
+    background-image: radial-gradient(rgba(3, 102, 0, 0.548) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: #fff;
+}
+body.light {
+    background-color: #eef2f7;
+    background-image: radial-gradient(rgba(34, 197, 94, 0.616) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+h1 {
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 1px;
+}
+/* =========================
+MAIN CONTAINER
+========================= */
+.container {
+    position: relative;
+    padding: 45px;
+    max-width: 700px;
+    text-align: center;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.568);
+}
+
+body.dark .container {
+    border: 2px solid rgb(32, 114, 0);
+}
+body.light .container {
+body.light .container {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.08),
+        0 8px 20px rgba(0, 0, 0, 0.04);
+}
+}
+/* APP AREA */
+.app {
+    width: 420px;
+    max-width: 90vw;
+}
+/* =========================
+HEADER / TOPBAR
+========================= */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.topbar h1 {
+    font-size: 32px;
+    font-weight: 600;
+}
+body.dark .topbar h1 {
+    color: rgb(30, 255, 0);
+}
+body.light .topbar h1 {
+    color: #149c3a;
+}
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-weather {
+    color: #00ff44;
+    text-shadow:
+        0 0 40px rgba(30, 255, 0, 0.397),
+        0 0 30px rgb(30, 255, 0),
+        0 4px 40px rgba(30, 255, 0, 0.411);
+}
+.logo-app {
+    text-shadow:
+        0 0 40px rgba(255, 255, 255, 0.397),
+        0 0 30px rgba(255, 255, 255, 0.397),
+        0 4px 40px rgba(30, 255, 0, 0.411);
+}
+body.dark .logo-app {
+    color: #f3f4f6;
+}
+body.light .logo-app {
+    color: #1b1b1b;
+    text-shadow:
+        0 0 40px rgba(0, 0, 0, 0.945),
+        0 0 30px rgb(0, 0, 0),
+        0 4px 40px rgba(0, 0, 0, 0.397);
+}
+.highlight {
+    font-family: "Orbitron", sans-serif;
+}
+body.dark .highlight {
+    color: #fff;
+}
+body.light .highlight {
+    color: #111;
+}
+/* =========================
+ACTION BUTTONS
+========================= */
+.actions {
+    display: flex;
+    gap: 5px;
+}
+/* BUTTON BASE */
+.btn {
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 800;
+    transition: background .3s, transform .2s;
+}
+.btn:hover {
+    transform: translateY(1px);
+}
+body.dark .btn {
+    background: rgb(0, 255, 64);
+    color: #000;
+}
+body.light .btn {
+    background: #22c55e;
+    color: #000000;
+}
+/* SECONDARY BUTTON */
+.secondary,
+.theme-btn {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+body.dark .secondary,
+body.dark .theme-btn {
+    border: 1px solid #51f72840;
+    background: linear-gradient(180deg, #0b300e, #0c2409);
+    color: #1eff00;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 0, 0, 0.04),
+        0 8px 20px rgba(0, 0, 0, 0.35);
+}
+body.light .secondary,
+body.light .theme-btn {
+    border: 1px solid rgba(0, 0, 0, 0.616);
+    background: linear-gradient(180deg, #7a7a7a98, #eef2f7);
+    color: #149c3a;
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.secondary:hover,
+.theme-btn:hover {
+    transform: translateY(-1px);
+}
+body.dark .secondary:hover,
+body.dark .theme-btn:hover {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 10px 24px rgba(94, 255, 129, 0.226),
+        0 0 14px rgba(7, 192, 69, 0.18);
+}
+body.light .secondary:hover,
+body.light .theme-btn:hover {
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.10);
+}
+.secondary i,
+.theme-btn i {
+    font-size: 18px;
+}
+/* =========================
+SEARCH
+========================= */
+.search {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    outline: none;
+    transition: .2s ease;
+}
+
+body.dark input {
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+body.light input {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.8);
+    color: #111;
+}
+
+body.dark input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.light input::placeholder {
+    color: rgba(0, 0, 0, 0.45);
+}
+
+body.dark input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #02ff24;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.226);
+}
+
+body.light input:focus {
+    background: #fff;
+    border: 1px solid #22c55e;
+    box-shadow: 0 0 18px rgba(34, 197, 94, 0.18);
+}
+
+body.dark input:focus::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+body.light input:focus::placeholder {
+    color: rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   RECENT SEARCHES
+========================= */
+.recent {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.recent-list {
+    margin-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* =========================
+   WEATHER CARD
+========================= */
+.card {
+    padding: 20px;
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+}
+
+body.dark .card {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
+}
+
+body.light .card {
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   WEATHER RESULT
+========================= */
+.result {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* PLACE */
+.place h2 {
+    font-size: 22px;
+}
+
+.place p {
+    font-size: 14px;
+    opacity: .8;
+}
+
+/* WEATHER INFO */
+.weather {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.weather img {
+    width: 70px;
+}
+.temp {
+    font-size: 32px;
+    font-weight: bold;
+}
+.desc {
+    text-transform: capitalize;
+}
+/* =========================
+EXTRAS
+========================= */
+.extras {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.pill {
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+body.dark .pill {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+body.light .pill {
+    background: rgba(0, 0, 0, 0.05);
+}
+/* =========================
+STATUS
+========================= */
+.status {
+    margin-bottom: 10px;
+    font-size: 14px;
+    opacity: .8;
+}

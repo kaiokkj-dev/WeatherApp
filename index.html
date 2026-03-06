@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="dark">
+<div class="container">
+    <main class="app" id="app">
+        <!-- TOPO -->
+        <header class="topbar">
+            <h1 class="logo">
+                <i class="bi bi-cloud-fill"></i>
+                <span class="logo-weather">WEATHER</span>
+                <span class="logo-app">APP</span>
+            </h1>
+            <div class="actions">
+                <button
+                    id="geoBtn"
+                    class="btn secondary"
+                    type="button"
+                    title="Usar localização"
+                >
+                    <i class="bi bi-geo-alt-fill"></i>
+                </button>
+                <button
+                    id="themeBtn"
+                    class="theme-btn"
+                    type="button"
+                    aria-label="Alternar tema"
+                >
+                    <i id="themeIcon" class="bi bi-sun"></i>
+                </button>
+            </div>
+        </header>
+        <!-- BUSCA -->
+        <section class="search">
+            <form id="form" autocomplete="off">
+                <input
+                    id="cityInput"
+                    type="text"
+                    placeholder="Search city (e.g., Rio de Janeiro)"
+                    aria-label="City"
+                    required
+                />
+                <button class="btn" type="submit">Search</button>
+            </form>
+            <div class="recent">
+                <span>Recentes:</span>
+                <div id="recentList" class="recent-list"></div>
+            </div>
+        </section>
+        <!-- CARD DO CLIMA -->
+        <section class="card" aria-live="polite">
+            <div id="status" class="status"></div>
+            <div id="result" class="result hidden">
+                <div class="place">
+                    <h2 id="placeName">—</h2>
+                    <p id="placeMeta">—</p>
+                </div>
+                <div class="weather">
+                    <img id="weatherIcon" alt="Ícone do clima" />
+                    <div>
+                        <p class="temp">
+                            <span id="temp">—</span>°C
+                        </p>
+                        <p id="desc" class="desc">—</p>
+                    </div>
+                </div>
+                <div class="extras">
+                    <div class="pill">
+                        <i class="bi bi-droplet"></i>
+                        Umidade: <strong id="humidity">—</strong>%
+                    </div>
+                    <div class="pill">
+                        <i class="bi bi-wind"></i>
+                        Vento: <strong id="wind">—</strong> m/s
+                    </div>
+                    <div class="pill">
+                        <i class="bi bi-thermometer-half"></i>
+                        Sensação: <strong id="feels">—</strong>°C
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>
