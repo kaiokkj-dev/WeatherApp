@@ -39,4 +39,4 @@ This project allows users to search for weather conditions in any city worldwide
 1. Clone the repository
 
 ```bash
-git clone https://github.com/SEU-USUARIO/WeatherApp.git
+git clone https://github.com/kaiokkj-dev/WeatherApp.git
