@@ -47,7 +47,7 @@ MAIN CONTAINER
     text-align: center;
     background: transparent;
     backdrop-filter: blur(10px);
-    border-radius: 5px;
+    border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.568);
 }
@@ -55,16 +55,7 @@ body.dark .container {
     border: 2px solid rgb(32, 114, 0);
 }
 body.light .container {
-    position: relative;
-    padding: 45px;
-    max-width: 700px;
-    text-align: center;
-    background: transparent;
-    backdrop-filter: blur(10px);
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.568);
-    border:2px solid #16a34a;
+    border: 2px solid rgb(32, 114, 0);
 }
 /* APP AREA */
 .app {
@@ -290,11 +281,11 @@ WEATHER CARD
 }
 body.dark .card {
     background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
+    box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.24);
 }
 body.light .card {
-    background: rgba(189, 189, 189, 0.7);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.116);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.24);
 }
 /* =========================
 WEATHER RESULT
@@ -309,13 +300,22 @@ WEATHER RESULT
 }
 /* PLACE */
 .place h2 {
-    font-size: 22px;
+    font-size: 28px;
+    text-shadow: 1px 1px 0px #00ff37;
+}
+body.dark .place p {
+    font-size: 18px;
+    opacity: 0.8;
+    color: #02ff24;
+    text-shadow: 1px 1px 0px #ffffff;
+}
+body.light .place p {
+    font-size: 18px;
+    opacity: 0.8;
+    color: #000000;
+    text-shadow: 1px 1px 0px #02ff24;
 }
 
-.place p {
-    font-size: 14px;
-    opacity: .8;
-}
 /* WEATHER INFO */
 .weather {
     display: flex;
@@ -337,7 +337,7 @@ EXTRAS
 ========================= */
 .extras {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
 }
@@ -348,9 +348,15 @@ EXTRAS
 }
 body.dark .pill {
     background: rgba(255, 255, 255, 0.1);
+    box-shadow: 1px 1px 0px #00ff37;
 }
 body.light .pill {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(15, 15, 15, 0.171);
+    box-shadow: 1px 1px 0px #00ff37;
+}
+.pill:hover{
+    box-shadow: 1px 1px 0px #00ff37;
+    transform: translateY(-2px);
 }
 /* =========================
 STATUS
