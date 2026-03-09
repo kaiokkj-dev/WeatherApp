@@ -7,7 +7,13 @@ RESET
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'komika axis', sans-serif;
+    font-family: "Komika Axis", sans-serif;
+}
+@font-face {
+    font-family: "Komika Axis";
+    src: url("../fonts/KOMIKAX_.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 /* =========================
 BODY / LAYOUT BASE
@@ -34,7 +40,6 @@ body.light {
     background-size: 40px 40px;
 }
 h1 {
-    font-family: "Orbitron", sans-serif;
     letter-spacing: 1px;
 }
 /* =========================
@@ -91,14 +96,14 @@ body.light .topbar h1 {
 body.dark .logo-weather {
     color: rgb(30, 255, 0);
     text-shadow:
-        0 0 40px rgba(30, 255, 0, 0.397),
-        0 0 30px rgb(30, 255, 0),
+        0 0 40px rgba(30, 255, 0, 0.253),
+        0 0 30px rgba(30, 255, 0, 0.13),
         0 4px 40px rgba(30, 255, 0, 0.411);
 }
 .logo-app {
     text-shadow:
-        0 0 40px rgba(255, 255, 255, 0.397),
-        0 0 30px rgba(255, 255, 255, 0.397),
+        0 0 40px rgba(255, 255, 255, 0.199),
+        0 0 30px rgba(255, 255, 255, 0.219),
         0 4px 40px rgba(30, 255, 0, 0.411);
 }
 body.dark .logo-app {
@@ -367,6 +372,42 @@ STATUS
     opacity: .8;
 }
 /* =========================
+RECENT
+========================= */
+.recent-list {
+    margin-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+}
+.recent-btn {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.2s ease;
+}
+body.dark .recent-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid #1eff00;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+body.light .recent-btn {
+    background: rgba(0, 0, 0, 0.05);
+    color: #111;
+    border: 1px solid #16a34a;
+}
+.recent-btn:hover {
+    transform: translateY(-1px);
+}
+/* =========================
 RESPONSIVIDADE
 ========================= */
 @media (max-width: 768px) {
@@ -416,4 +457,24 @@ RESPONSIVIDADE
     .btn {
         padding: 0.85rem 1rem;
     }
+}
+.watermark{
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    font-size: 0.7rem;
+    opacity: 0.45;
+    color: #fff;
+    pointer-events: none;
+    margin-bottom: -8px;
+}
+body.light .watermark{
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    font-size: 0.7rem;
+    opacity: 0.45;
+    color: #000000;
+    pointer-events: none;
+    margin-bottom: -8px;
 }
